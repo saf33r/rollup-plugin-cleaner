@@ -1,17 +1,22 @@
 # rollup-plugin-cleaner
 
-A rollup plugin to clean directories before rebuilding.
+:wastebasket: A rollup plugin to clean directories before rebuilding.
 
 ## Installation
-
-    npm install rollup-plugin-cleaner
-
-or
-
-    yarn add rollup-plugin-cleaner
+### npm
+`npm install rollup-plugin-cleaner --save-dev`
+### yarn
+`yarn add rollup-plugin-cleaner --dev`
 
 ## Usage
 
+### Options
+Option   |   Type    |    Description
+---------| ----------| -------------
+`targets`  | `Array`     | List of directories which should be cleaned on every build.
+`silent`  | `Boolean`| Flag to disable logging output to console.
+
+### Example
 To remove the `build` directory on every build add the following to `rollup.config.js`:
 
 ```JavaScript
