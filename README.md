@@ -11,10 +11,10 @@
 ## Usage
 
 ### Options
-Option   |   Type    |    Description
----------| ----------| -------------
-`targets`  | `Array`     | List of directories which should be cleaned on every build.
-`silent`  | `Boolean`| Flag to disable logging output to console.
+Option   |   Type        |    Description     |    Default
+---------| --------------| ------------------ | ---------------------------------
+`targets`  | `Array`     | List of directories which should be cleaned on every build. | `[]`
+`silent`  | `Boolean`| Flag to disable logging output to console. | `false`
 
 ### Example
 To remove the `build` directory on every build add the following to `rollup.config.js`:
