@@ -14,7 +14,13 @@
     "remove",
     "delete"
   ],
+  "scripts": {
+    "prettier": "prettier --write \"**/*.@(yml|json|js|md)\"",
+    "prettier:check": "prettier --check \"**/*.@(yml|json|js|md)\"",
+    "test": "npm run prettier:check"
+  },
   "devDependencies": {
+    "prettier": "^1.18.2",
     "rollup": "^0.52.1"
   },
   "dependencies": {
