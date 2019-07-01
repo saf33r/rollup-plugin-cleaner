@@ -19,6 +19,9 @@
     "prettier:check": "prettier --check \"**/*.@(yml|json|js|md)\"",
     "test": "npm run prettier:check"
   },
+  "files": [
+    "*.js"
+  ],
   "devDependencies": {
     "prettier": "^1.18.2"
   },
