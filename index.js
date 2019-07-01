@@ -1,24 +1,21 @@
 'use strict'
 
-var fs = require('fs')
-var path = require('path')
-var rimraf = require('rimraf')
+const { promisify } = require('util')
+const fs = require('fs')
+const path = require('path')
+const rimraf = promisify(require('rimraf'))
 
-module.exports = function(options) {
-  options = options || {}
-  var targets = options.targets ? options.targets : []
-  var silent = options.silent === true
+module.exports = function({ targets = [], silent = true } = {}) {
   return {
     name: 'cleaner',
-    ongenerate: function(details) {
-      var normalisedPath
-      if (targets && targets.length) {
-        for (let i = 0; i < targets.length; i++) {
-          normalisedPath = path.normalize(targets[i])
-          if (fs.existsSync(normalisedPath)) {
-            !silent && console.log('cleaning path: ' + normalisedPath)
-            rimraf.sync(normalisedPath)
+    async buildStart(options) {
+      for (const targetPath of targets) {
+        const normalisedPath = path.normalize(targetPath)
+        if (fs.existsSync(normalisedPath)) {
+          if (!silent) {
+            console.log(`cleaning path: ${normalisedPath}`)
           }
+          await rimraf(normalisedPath)
         }
       }
     },
