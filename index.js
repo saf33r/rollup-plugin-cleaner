@@ -1,9 +1,7 @@
 'use strict'
 
-const { promisify } = require('util')
 const fs = require('fs')
 const path = require('path')
-const rimraf = promisify(require('rimraf'))
 
 module.exports = function({ targets = [], silent = true } = {}) {
   return {
@@ -15,7 +13,7 @@ module.exports = function({ targets = [], silent = true } = {}) {
           if (!silent) {
             console.log(`cleaning path: ${normalisedPath}`)
           }
-          await rimraf(normalisedPath)
+          await fs.promises.rm(normalisedPath, { recursive: true, force: true })
         }
       }
     },
