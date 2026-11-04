@@ -1,9 +1,9 @@
 {
   "name": "rollup-plugin-cleaner",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A rollup plugin to clean directories before rebuilding.",
   "main": "index.js",
-  "repository": "https://github.com/saf33r/rollup-plugin-cleaner.git",
+  "repository": "saf33r/rollup-plugin-cleaner",
   "bugs": "https://github.com/saf33r/rollup-plugin-cleaner/issues",
   "author": "Safeer Ahmed",
   "license": "MIT",
@@ -14,10 +14,21 @@
     "remove",
     "delete"
   ],
+  "scripts": {
+    "prettier": "prettier --write \"**/*.@(yml|json|js|md)\"",
+    "prettier:check": "prettier --check \"**/*.@(yml|json|js|md)\"",
+    "test": "npm run prettier:check"
+  },
+  "files": [
+    "*.js"
+  ],
   "devDependencies": {
-    "rollup": "^4.67.5"
+    "prettier": "^1.18.2"
+  },
+  "peerDependencies": {
+    "rollup": "> 1.0"
   },
   "engines": {
-    "node": ">=14.14.0"
+    "node": ">= 14.14"
   }
 }
