@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var rimraf = require('rimraf');
 
 module.exports = function(options) {
   options = options || {};
@@ -17,7 +16,7 @@ module.exports = function(options) {
           normalisedPath = path.normalize(targets[i]);
           if (fs.existsSync(normalisedPath)) {
             !silent && console.log('cleaning path: ' + normalisedPath);
-            rimraf.sync(normalisedPath);
+            fs.rmSync(normalisedPath, { recursive: true, force: true });
           }
         }
       }
