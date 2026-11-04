@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.0.0 &ndash; November 4, 2026
 
 - BREAKING CHANGE: Require Node 14.14+.
 - Replace `rimraf` with Node's built-in `fs.promises.rm`, fixing security alerts in its `glob` dependencies.
