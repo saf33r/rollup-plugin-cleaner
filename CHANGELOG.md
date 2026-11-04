@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.1.0 &ndash; November 4, 2026
 
 - Add an `exclude` option to keep files and directories inside the targets (#3).
 - When several configs in an array share a target, only the first one cleans it, so later configs no longer delete earlier bundles (#4).
